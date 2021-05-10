@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+.header {
+    width: 100%;
+    height: 67px;
+    background-color: #141414;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 34px;
+    line-height: 40px;
+    color: #E64332;
+}
