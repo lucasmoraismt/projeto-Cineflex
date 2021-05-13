@@ -134,3 +134,42 @@ h1 {
   font-weight: bold;
   color: #fafafa;
 }
+.seats-list {
+  width: 100%;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(10, 25px);
+  justify-content: space-between;
+}
+.seat {
+  width: 25px;
+  height: 25px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.seat.available {
+  background-color: #c3cfd9;
+}
+.seat.unavailable {
+  background-color: #fbe192;
+}
+.seat.available.selected {
+  background-color: #8dd7cf;
+}
+.seat p {
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.04em;
+}
+.subtitles {
+  display: flex;
+  justify-content: space-around;
+}
+.subtitle {
+  font-size: 13px;
+  line-height: 15px;
+  color: #4e5a65;
+}

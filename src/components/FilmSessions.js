@@ -14,7 +14,7 @@ export default function FilmSessions() {
     );
 
     promise.then((response) => {
-      setTimeout(() => setSessions(response.data), 500);
+      setTimeout(() => setSessions(response.data), 400);
     });
     promise.catch(() => alert("Erro!"));
   }, [filmId]);

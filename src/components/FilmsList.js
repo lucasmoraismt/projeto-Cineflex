@@ -11,7 +11,7 @@ export default function FilmsList() {
     );
 
     promise.then((response) => {
-      setFilms(response.data);
+      setTimeout(() => setFilms(response.data), 400);
     });
     promise.catch(() => alert("Erro!"));
   }, []);

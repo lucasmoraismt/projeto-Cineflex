@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom";
 
 export default function Day({ day }) {
-  const { id, weekday, date, showtimes } = day;
+  const { weekday, date, showtimes } = day;
 
-  function TimeButton({ name, id }) {
+  function TimeButton({ hour, id }) {
     return (
-      <Link to={`/session/${id}`}>
+      <Link
+        to={{
+          pathname: `/session/${id}`,
+          hour,
+        }}
+      >
         <li className="weekday-time">
-          <p>{name}</p>
+          <p>{hour}</p>
         </li>
       </Link>
     );
   }
-  console.clear();
-  console.log(showtimes);
   return (
     <div>
       <p className="session-day">{`${weekday} - ${date}`}</p>
       <ul className="times-list">
         {showtimes.map((t) => (
-          <TimeButton name={t.name} key={t.id} />
+          <TimeButton hour={t.name} id={t.id} key={t.id} />
         ))}
       </ul>
     </div>
