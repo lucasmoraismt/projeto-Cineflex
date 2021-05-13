@@ -164,12 +164,53 @@ h1 {
   line-height: 13px;
   letter-spacing: 0.04em;
 }
+.examples,
 .subtitles {
   display: flex;
   justify-content: space-around;
+}
+.subtitles {
+  margin-bottom: 40px;
 }
 .subtitle {
   font-size: 13px;
   line-height: 15px;
   color: #4e5a65;
+}
+.input-title {
+  font-size: 18px;
+  line-height: 21px;
+  color: #293845;
+}
+.input {
+  width: 100%;
+  height: 51px;
+  padding-left: 15px;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 7px;
+}
+.input::placeholder {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 21px;
+  color: #afafaf;
+}
+.confirmation {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px 30px;
+}
+.reservation {
+  width: 225px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #800006;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  border: none;
 }

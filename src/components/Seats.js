@@ -44,6 +44,13 @@ export default function Seats(props) {
         {seats.length === 0 ? <Loading /> : <SeatsList />}
       </ul>
       <Subtitles />
+      <p className="input-title">Nome</p>
+      <input className="input" type="text" placeholder="Digite seu nome..." />
+      <p className="input-title">CPF</p>
+      <input className="input" type="number" placeholder="Digite seu CPF..." />
+      <div className="confirmation">
+        <button className="reservation">Reservar assento(s)</button>
+      </div>
       {seats.length === 0 ? (
         ""
       ) : (

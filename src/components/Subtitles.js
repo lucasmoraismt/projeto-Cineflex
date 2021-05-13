@@ -1,7 +1,7 @@
 export default function Subtitles() {
   return (
     <>
-      <ul className="subtitles">
+      <ul className="examples">
         <li className="seat available selected"></li>
         <li className="seat available"></li>
         <li className="seat unavailable"></li>
