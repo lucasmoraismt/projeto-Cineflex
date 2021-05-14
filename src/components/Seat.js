@@ -2,26 +2,33 @@ import { useState } from "react";
 
 export default function Seat(props) {
   const { id, name, isAvailable, selected, setSelected } = props;
-  const [isSelected, setIsSelected] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   function selectSeat(id) {
     if (!isAvailable) {
-      return;
+      alert("Esse assento não está disponível!");
     } else {
-      if (!isSelected) {
-        setIsSelected(true);
+      let newSeat;
+      if (!isClicked) {
+        setIsClicked(true);
+        newSeat = [...selected, id];
+        setSelected(newSeat);
+        console.log(selected, isClicked);
       } else {
-        setIsSelected(false);
+        setIsClicked(false);
+        newSeat = selected.filter((i) => i !== id);
+        setSelected(newSeat);
+        console.log(selected, isClicked);
       }
     }
   }
 
   return (
     <li
-      onClick={() => selectSeat(id)}
+      onClick={() => selectSeat(id, name)}
       className={
         isAvailable
-          ? isSelected
+          ? isClicked
             ? "seat available selected"
             : "seat available"
           : "seat unavailable"

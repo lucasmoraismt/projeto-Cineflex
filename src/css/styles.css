@@ -44,6 +44,13 @@ h1 {
   letter-spacing: -0.04em;
   color: #293845;
 }
+.page-title.success {
+  margin: 0px auto;
+  text-align: center;
+  width: 180px;
+  font-weight: bold;
+  color: #247a6b;
+}
 .container .films-list {
   width: 100%;
   display: flex;
@@ -213,4 +220,8 @@ h1 {
   line-height: 21px;
   color: #fff;
   border: none;
+  cursor: not-allowed;
+}
+.reservation.allowed {
+  cursor: pointer;
 }

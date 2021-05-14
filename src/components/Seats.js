@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Seat from "./Seat";
 import Loading from "./Loading";
 import Subtitles from "./Subtitles";
 import BottomBar from "./BottomBar";
 
 export default function Seats(props) {
-  const hour = props.location;
+  const {
+    selectedSeats,
+    setSelectedSeats,
+    inputName,
+    setInputName,
+    cpf,
+    setCpf,
+  } = props;
   const [seats, setSeats] = useState([]);
-  const [selectedSeats, setSelectedSeats] = useState({});
-  const [inputName, setInputName] = useState("");
-  const [cpf, setCpf] = useState("");
   const { sessionId } = useParams();
   useEffect(() => {
     const promise = axios.get(
@@ -49,7 +53,9 @@ export default function Seats(props) {
       <p className="input-title">CPF</p>
       <input className="input" type="number" placeholder="Digite seu CPF..." />
       <div className="confirmation">
-        <button className="reservation">Reservar assento(s)</button>
+        <Link to="/success">
+          <button className="reservation">Reservar assento(s)</button>
+        </Link>
       </div>
       {seats.length === 0 ? (
         ""
@@ -58,7 +64,7 @@ export default function Seats(props) {
           title={seats.movie.title}
           posterURL={seats.movie.posterURL}
           weekday={seats.day.weekday}
-          time={hour}
+          time={seats.name}
         />
       )}
     </div>
