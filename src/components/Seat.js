@@ -1,40 +1,40 @@
-import { useState } from "react";
-
 export default function Seat(props) {
-  const { id, name, isAvailable, selected, setSelected } = props;
-  const [isClicked, setIsClicked] = useState(false);
+  const { selected, setSelected, seats, seatsNames, setSeatsNames } = props;
 
-  function selectSeat(id) {
-    if (!isAvailable) {
+  function selectSeat(s) {
+    if (!s.isAvailable) {
       alert("Esse assento não está disponível!");
     } else {
       let newSeat;
-      if (!isClicked) {
-        setIsClicked(true);
-        newSeat = [...selected, id];
+      if (selected.find((i) => i === s.id) === undefined) {
+        newSeat = [...selected, s.id];
         setSelected(newSeat);
-        console.log(selected, isClicked);
+        setSeatsNames([...seatsNames, s.name]);
       } else {
-        setIsClicked(false);
-        newSeat = selected.filter((i) => i !== id);
+        newSeat = selected.filter((i) => i !== s.id);
         setSelected(newSeat);
-        console.log(selected, isClicked);
+        setSeatsNames(() => selected.filter((i) => i !== s.name));
       }
     }
   }
 
   return (
-    <li
-      onClick={() => selectSeat(id, name)}
-      className={
-        isAvailable
-          ? isClicked
-            ? "seat available selected"
-            : "seat available"
-          : "seat unavailable"
-      }
-    >
-      <p>{name}</p>
-    </li>
+    <ul className="seats-list">
+      {seats.map((s) => (
+        <li
+          key={s.id}
+          onClick={() => selectSeat(s)}
+          className={
+            s.isAvailable
+              ? selected.find((i) => i === s.id) === undefined
+                ? "seat available"
+                : "seat available selected"
+              : "seat unavailable"
+          }
+        >
+          <p>{s.name}</p>
+        </li>
+      ))}
+    </ul>
   );
 }

@@ -10,13 +10,13 @@ import "../css/reset.css";
 import "../css/styles.css";
 
 export default function App() {
-  const [selectedSeats, setSelectedSeats] = useState([]);
   const [inputName, setInputName] = useState("");
   const [cpf, setCpf] = useState("");
+  const [successData, setSuccessData] = useState({});
   const purchaseData = {
-    ids: selectedSeats,
     name: inputName,
     cpf: cpf,
+    ...successData,
   };
 
   return (
@@ -31,16 +31,20 @@ export default function App() {
         </Route>
         <Route path="/session/:sessionId" exact>
           <Seats
-            selectedSeats={selectedSeats}
-            setSelectedSeats={setSelectedSeats}
             inputName={inputName}
             setInputName={setInputName}
             cpf={cpf}
             setCpf={setCpf}
+            setSuccessData={setSuccessData}
           />
         </Route>
         <Route path="/success" exact>
-          <Success />
+          <Success
+            purchaseData={purchaseData}
+            setInputName={setInputName}
+            setCpf={setCpf}
+            setSuccessData={setSuccessData}
+          />
         </Route>
       </Switch>
     </BrowserRouter>

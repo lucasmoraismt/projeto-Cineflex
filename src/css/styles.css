@@ -34,6 +34,9 @@ h1 {
   padding: 25px;
   margin-bottom: 95px;
 }
+.container.success {
+  padding: 25px;
+}
 .container .page-title {
   display: flex;
   justify-content: center;
@@ -208,7 +211,7 @@ h1 {
   justify-content: center;
   margin: 50px 0px 30px;
 }
-.reservation {
+.proceed {
   width: 225px;
   height: 42px;
   display: flex;
@@ -222,6 +225,20 @@ h1 {
   border: none;
   cursor: not-allowed;
 }
-.reservation.allowed {
+.proceed.allowed {
   cursor: pointer;
+}
+.success-title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.success-data {
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.04em;
+  margin-right: 10px;
 }
