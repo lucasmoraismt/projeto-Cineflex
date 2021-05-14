@@ -24,10 +24,16 @@ export default function FilmsList() {
 
   return (
     <div className="container">
-      <p className="page-title">Selecione o filme</p>
-      <ul className="films-list">
-        {films.length === 0 ? <Loading /> : <FilmsMap />}
-      </ul>
+      {films.length === 0 ? (
+        <Loading />
+      ) : (
+        <>
+          <p className="page-title">Selecione o filme</p>
+          <ul className="films-list">
+            <FilmsMap />
+          </ul>
+        </>
+      )}
     </div>
   );
 }

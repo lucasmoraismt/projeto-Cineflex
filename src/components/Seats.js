@@ -57,23 +57,18 @@ export default function Seats(props) {
 
   return (
     <div className="container selection">
-      <p className="page-title">Selecione o(s) assento(s)</p>
       {seats.length === 0 ? (
         <Loading />
       ) : (
-        <Seat
-          selected={selectedSeats}
-          setSelected={setSelectedSeats}
-          seats={seats.seats}
-          seatsNames={seatsNames}
-          setSeatsNames={setSeatsNames}
-        />
-      )}
-
-      {seats.length === 0 ? (
-        ""
-      ) : (
         <>
+          <p className="page-title">Selecione o(s) assento(s)</p>
+          <Seat
+            selected={selectedSeats}
+            setSelected={setSelectedSeats}
+            seats={seats.seats}
+            seatsNames={seatsNames}
+            setSeatsNames={setSeatsNames}
+          />
           <Subtitles />
           <p className="input-title">Nome</p>
           <input

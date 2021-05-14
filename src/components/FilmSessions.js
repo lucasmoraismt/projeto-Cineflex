@@ -20,25 +20,23 @@ export default function FilmSessions() {
   }, [filmId]);
 
   return (
-    <>
-      <div className="container selection">
-        <p className="page-title">Selecione o horário</p>
-        {sessions.length === 0 ? (
-          <Loading />
-        ) : (
-          sessions.days.map((d) => <Day day={d} key={d.id} />)
-        )}
-      </div>
+    <div className="container selection">
       {sessions.length === 0 ? (
-        ""
+        <Loading />
       ) : (
-        <BottomBar
-          title={sessions.title}
-          posterURL={sessions.posterURL}
-          weekday={null}
-          time={null}
-        />
+        <>
+          <p className="page-title">Selecione o horário</p>
+          {sessions.days.map((d) => (
+            <Day day={d} key={d.id} />
+          ))}
+          <BottomBar
+            title={sessions.title}
+            posterURL={sessions.posterURL}
+            weekday={null}
+            time={null}
+          />
+        </>
       )}
-    </>
+    </div>
   );
 }
