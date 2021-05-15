@@ -57,18 +57,18 @@ The focus of this project is to further develop Front End skills and the concept
 The application layout is available on Figma:
 
 <a href="https://www.figma.com/file/rc7ZTYfLZg9zpGahWB1aXb/Cineflex?node-id=0%3A1">
-  <img alt="Project Figma" src="https://img.shields.io/badge/%20Layout%20-Figma-%2304D361?style=for-the-badge&logo=appveyor">
+  <img alt="Project Figma" src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 </a>
 
 ### Mobile
 
 <p align="center">
   <img alt="Mobile Homepage" title="#Homepage" src="src/assets/homepage.png" width="200px" height="355px">
-  <img alt="Mobile Quizz Header" title="#QuizzHeader" src="src/assets/movie-sessions.png" width="200px" height="355px">
+  <img alt="Movie sessions" title="#MovieSessions" src="src/assets/movie-sessions.png" width="200px" height="355px">
 </p>
 <p align="center">
-  <img alt="Mobile answer clicked" title="#Answer" src="src/assets/session-seats.png" width="200px" height="355px">
-  <img alt="Mobile quizz result" title="#Quizz" src="src/assets/success.png" width="200px" height="355px">
+  <img alt="Session Seats" title="#SessionSeats" src="src/assets/session-seats.png" width="200px" height="355px">
+  <img alt="Success" title="#Success" src="src/assets/success.png" width="200px" height="355px">
 </p>
 
 ## Tech Used
